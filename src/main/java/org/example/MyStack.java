@@ -14,10 +14,11 @@ public class MyStack<E> extends ArrayList<E> {
     }
 
     public E pop() {
-        if (isEmpty()) throw new EmptyStackException();
-        E e = get(size() - 1);
-        remove(size() -1 );
+        if (delegate.isEmpty()) throw new EmptyStackException();
+        E e = delegate.get(size() - 1);
+        delegate.remove(size() -1 );
         return e;
     }
+
 
 }
